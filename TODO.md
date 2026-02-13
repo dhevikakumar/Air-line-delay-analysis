@@ -1,0 +1,3 @@
+- [x] Update styles.css: Add media query for tablets (768px-1024px) to optimize layout, padding, and font sizes for better usability on tablets and iPads.
+- [x] Update script.js: Add device detection on page load; if screen width < 768px (phones), hide main content and display a restriction message.
+- [x] Test the changes: Verify that tablets/iPads display the dashboard properly and phones show the restriction message.

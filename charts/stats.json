@@ -1,0 +1,11 @@
+{
+  "total_flights": 5000,
+  "avg_delay": 55.9766,
+  "median_delay": 12.0,
+  "ontime_percentage": 1.28,
+  "severe_delay_percentage": 26.400000000000002,
+  "most_delayed_airline": "Delta Air Lines",
+  "least_delayed_airline": "Frontier Airlines",
+  "worst_delay_reason": "Air Traffic Control",
+  "peak_delay_hour": 4
+}

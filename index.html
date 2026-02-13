@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Delay Analysis Dashboard</title>
+    <meta name="description" content="Comprehensive analysis of airline flight delays with interactive visualizations">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">✈️</div>
+                <div>
+                    <h1>Airline Delay Analysis</h1>
+                    <p class="subtitle">Comprehensive Flight Delay Insights & Visualizations</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Key Statistics -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-label">Total Flights</div>
+                    <div class="stat-value" id="total-flights">Loading...</div>
+                    <div class="stat-change">Analyzed in dataset</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-label">Average Delay</div>
+                    <div class="stat-value"><span id="avg-delay">--</span> min</div>
+                    <div class="stat-change">Across all flights</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-label">On-Time Rate</div>
+                    <div class="stat-value success-text"><span id="ontime-pct">--</span>%</div>
+                    <div class="stat-change">No delay</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-label">Severe Delays</div>
+                    <div class="stat-value danger-text"><span id="severe-delay-pct">--</span>%</div>
+                    <div class="stat-change">>60 minutes</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Key Insights -->
+        <section class="insights-section">
+            <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; text-align: center;">
+                🔍 Key Insights
+            </h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Most Delayed Airline</div>
+                    <div class="stat-value" style="font-size: 1.5rem;" id="most-delayed-airline">--</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-label">Best Performing Airline</div>
+                    <div class="stat-value success-text" style="font-size: 1.5rem;" id="least-delayed-airline">--</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-label">Top Delay Reason</div>
+                    <div class="stat-value warning-text" style="font-size: 1.5rem;" id="worst-reason">--</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-label">Peak Delay Hour</div>
+                    <div class="stat-value" style="font-size: 1.5rem;" id="peak-hour">--</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Visualizations -->
+        <section class="charts-section">
+            
+            <!-- Delay Distribution -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <span class="chart-icon">📈</span>
+                    <h2 class="chart-title">Delay Distribution</h2>
+                </div>
+                <div class="chart-container">
+                    <iframe src="charts/delay_distribution.html"></iframe>
+                </div>
+            </div>
+
+            <!-- Delay Categories -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <span class="chart-icon">🏷️</span>
+                    <h2 class="chart-title">Flight Count by Delay Category</h2>
+                </div>
+                <div class="chart-container">
+                    <iframe src="charts/delay_categories.html"></iframe>
+                </div>
+            </div>
+
+            <!-- Two Column Layout -->
+            <div class="two-column-grid">
+                <!-- Airline Comparison -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <span class="chart-icon">🏢</span>
+                        <h2 class="chart-title">Airline Comparison</h2>
+                    </div>
+                    <div class="chart-container">
+                        <iframe src="charts/airline_comparison.html"></iframe>
+                    </div>
+                </div>
+
+                <!-- Delay Reasons -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <span class="chart-icon">🎯</span>
+                        <h2 class="chart-title">Delay Reasons</h2>
+                    </div>
+                    <div class="chart-container">
+                        <iframe src="charts/delay_reasons.html"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hourly Analysis -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <span class="chart-icon">🕐</span>
+                    <h2 class="chart-title">Average Delay by Hour of Day</h2>
+                </div>
+                <div class="chart-container">
+                    <iframe src="charts/hourly_delays.html"></iframe>
+                </div>
+            </div>
+
+            <!-- Monthly Trends -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <span class="chart-icon">📅</span>
+                    <h2 class="chart-title">Monthly Trends</h2>
+                </div>
+                <div class="chart-container">
+                    <iframe src="charts/monthly_trends.html"></iframe>
+                </div>
+            </div>
+
+            <!-- Top Delayed Routes -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <span class="chart-icon">🗺️</span>
+                    <h2 class="chart-title">Top Delayed Routes</h2>
+                </div>
+                <div class="chart-container">
+                    <iframe src="charts/top_delayed_routes.html"></iframe>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Airline Delay Analysis Dashboard | Data Visualization Project 2024</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem;">
+            Built with Python, Plotly, HTML/CSS/JavaScript
+        </p>
+    </footer>
+
+    <!-- Mobile Restriction Message -->
+    <div id="mobile-message" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--color-background); color: var(--color-text); z-index: 9999; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem;">
+        <h1 style="font-size: 2rem; margin-bottom: 1rem;">📱 Mobile Access Restricted</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">This website is optimized for tablets and larger screens. Please use a tablet or desktop for the best experience.</p>
+        <p style="color: var(--color-text-muted);">If you're on a tablet, try rotating your device or accessing from a larger screen.</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
